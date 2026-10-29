@@ -18,7 +18,9 @@ Copy this folder, with its `SKILL.md` at the top level, to where your agent load
 
 ```bash
 git clone https://github.com/interplanetarychris/riskthing-skill ~/.claude/skills/riskthing
-``` Other agents that support `SKILL.md` skills load it from their own skills folder.
+```
+
+Other agents that support `SKILL.md` skills load it from their own skills folder.
 
 ## Connect RiskThing
 
