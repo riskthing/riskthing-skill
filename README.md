@@ -17,7 +17,7 @@ An agent skill for risk management. It teaches an AI agent to write risks and mi
 Copy this folder, with its `SKILL.md` at the top level, to where your agent loads skills. For Claude Code, that is `~/.claude/skills/riskthing/` for every project, or `.claude/skills/riskthing/` inside one project:
 
 ```bash
-git clone https://github.com/interplanetarychris/riskthing-skill ~/.claude/skills/riskthing
+git clone https://github.com/riskthing/riskthing-skill ~/.claude/skills/riskthing
 ```
 
 Other agents that support `SKILL.md` skills load it from their own skills folder.
