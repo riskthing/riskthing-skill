@@ -14,9 +14,19 @@ An agent skill for risk management. It teaches an AI agent to write risks and mi
 
 ## Install
 
+Send your agent this:
+
+```text
+Read https://github.com/riskthing/riskthing-skill and install the riskthing skill.
+```
+
+Your agent installs the skill, or tells you which step is yours.
+
+**If you are an agent reading this:** find the section for your product below and install the skill. If a step needs the person, such as an upload, a setting or a trust prompt, tell them that one step. If you cannot install skills, read `SKILL.md` and the files under `references/`, and follow them for this conversation.
+
 You need no RiskThing account and no MCP connection to install the skill, analyze a document, draft risks, or score likelihood and consequence.
 
-Open the section for your agent. The chat apps take one file, [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). The coding agents take this folder. Grok Bot and ChatGPT Work install it when you ask.
+The sections below hold the steps for each agent. The chat apps take one file, [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). The coding agents take this folder. Grok Bot and ChatGPT Work install it when you ask.
 
 Use that download link, not GitHub's **Code > Download ZIP**. The skill's folder must be named `riskthing`, and GitHub's own zip names it `riskthing-skill-main`.
 
