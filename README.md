@@ -14,6 +14,8 @@ An agent skill for risk management. It teaches an AI agent to write risks and mi
 
 ## Install
 
+You need no RiskThing account and no MCP connection to install the skill, analyze a document, draft risks, or score likelihood and consequence.
+
 Open the section for your agent. The chat apps take one file, [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). The coding agents take this folder.
 
 Use that download link, not GitHub's **Code > Download ZIP**. The skill's folder must be named `riskthing`, and GitHub's own zip names it `riskthing-skill-main`.
@@ -58,30 +60,96 @@ If the desktop app shows no upload option, do step 3 in the browser. The skill i
 <details>
 <summary><b>Claude Code</b></summary>
 
-One command installs the skill for every project:
+**Every project on this computer:**
 
 ```bash
 git clone https://github.com/riskthing/riskthing-skill ~/.claude/skills/riskthing
 ```
 
-For one project only, clone it to `.claude/skills/riskthing/` inside that project. To update, run `git pull` in the folder.
+To update, run `git pull` in that folder.
+
+**One project only.** Run this in the project's top folder:
+
+```bash
+curl -L -o riskthing.zip https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip
+mkdir -p .claude/skills
+unzip riskthing.zip -d .claude/skills/
+```
+
+These paths must then exist, with no second `riskthing/` folder inside the first:
+
+```text
+.claude/skills/riskthing/SKILL.md
+.claude/skills/riskthing/references/
+```
+
+Keep `references/` beside `SKILL.md`. `SKILL.md` alone leaves out the writing guidance and the scales.
+
+In a session in that project, ask: "Use the riskthing skill to review this document." If the skill does not appear, restart Claude Code.
 
 </details>
 
 <details>
-<summary><b>Codex and Grok Build</b></summary>
+<summary><b>Codex</b></summary>
 
-Codex loads skills from `~/.agents/skills/`:
+**Every project on this computer:**
 
 ```bash
 git clone https://github.com/riskthing/riskthing-skill ~/.agents/skills/riskthing
 ```
 
-Grok Build loads skills from `~/.grok/skills/`:
+To update, run `git pull` in that folder.
+
+**One project only.** Run this in the project's top folder:
+
+```bash
+curl -L -o riskthing.zip https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip
+mkdir -p .agents/skills
+unzip riskthing.zip -d .agents/skills/
+```
+
+These paths must then exist, with no second `riskthing/` folder inside the first:
+
+```text
+.agents/skills/riskthing/SKILL.md
+.agents/skills/riskthing/references/
+```
+
+Keep `references/` beside `SKILL.md`. `SKILL.md` alone leaves out the writing guidance and the scales.
+
+In a session in that project, ask: "Use the riskthing skill to review this document." If the skill does not appear, restart Codex.
+
+</details>
+
+<details>
+<summary><b>Grok Build</b></summary>
+
+**Every project on this computer:**
 
 ```bash
 git clone https://github.com/riskthing/riskthing-skill ~/.grok/skills/riskthing
 ```
+
+To update, run `git pull` in that folder.
+
+**One project only.** Run this in the project's top folder:
+
+```bash
+curl -L -o riskthing.zip https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip
+mkdir -p .grok/skills
+unzip riskthing.zip -d .grok/skills/
+```
+
+These paths must then exist, with no second `riskthing/` folder inside the first:
+
+```text
+.grok/skills/riskthing/SKILL.md
+.grok/skills/riskthing/references/
+```
+
+Keep `references/` beside `SKILL.md`. `SKILL.md` alone leaves out the writing guidance and the scales.
+
+In a session in that project, ask: "Use the riskthing skill to review this document." If the skill does not appear, restart Grok Build.
 
 </details>
 
@@ -92,9 +160,9 @@ Copy this folder to where your agent loads `SKILL.md` skills. Name the folder `r
 
 </details>
 
-None of these steps needs a RiskThing account. Without one, the skill writes and scores risks and gives them to you as a table. To keep them in a live register, connect RiskThing.
+## Optional: connect a live RiskThing risk register
 
-## Connect RiskThing
+Skip this section if you only want the skill to write and score risks. Connect RiskThing when you want the agent to keep them in a live register.
 
 ### Your organization's administrator, once
 
