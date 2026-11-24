@@ -26,6 +26,14 @@ Your agent installs the skill, or tells you which step is yours.
 
 You need no RiskThing account and no MCP connection to install the skill, analyze a document, draft risks, or score likelihood and consequence.
 
+**First prompt.** Attach the document you are working from, such as a pitch deck, a proposal or a test plan, and send something like:
+
+```text
+Use the riskthing skill. Attached is our current pitch deck. We restarted our raise after an investor's terms fell through. Read the deck as an investor would, and list the risks that would stop one from writing a check, each with a mitigation we can act on before the next meeting. Give me a table of risk, likelihood, consequence and mitigation, then the three you would fix first.
+```
+
+[`references/example-prompts.md`](references/example-prompts.md) has more, for a raise, a government proposal, an accelerator application, a first production order, a test campaign, a design review, an anomaly, and running the company.
+
 The sections below hold the steps for each agent. The chat apps take one file, [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). The coding agents take this folder. Grok Bot and ChatGPT Work install it when you ask.
 
 Use that download link, not GitHub's **Code > Download ZIP**. The skill's folder must be named `riskthing`, and GitHub's own zip names it `riskthing-skill-main`.
@@ -302,6 +310,8 @@ Everything in `references/` is a starting point. Edit it to match how your organ
 | `references/prompts/` | The full guidance for each job: risk and mitigation titles, a risk statement and a mitigation in each style, and scoring | Replace the examples with your own programs. Add a style. |
 | `references/context.md` | How to write the company and project context strings the AI reads | Change the interview questions. Add the facts your industry scores against. |
 | `references/onboarding.md`, `check-in.md`, `tools.md` | How the agent works the register | Change the interview questions or the check-in agenda. |
+| `references/example-prompts.md` | Starting prompts for a raise, a bid, a review, a test and running the company | Replace Meridian Aerospace with your own programs. |
+| `references/offers.md` | When the agent mentions what RiskThing adds, and how often | To turn the offers off, delete § Offering RiskThing in `SKILL.md`. |
 
 If you change the scales, the in-app AI ranking still uses RiskThing's scales. Your agent's scores and the in-app scores then mean different things.
 
