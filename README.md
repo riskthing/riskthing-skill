@@ -16,7 +16,7 @@ An agent skill for risk management. It teaches an AI agent to write risks and mi
 
 You need no RiskThing account and no MCP connection to install the skill, analyze a document, draft risks, or score likelihood and consequence.
 
-Open the section for your agent. The chat apps take one file, [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). The coding agents take this folder. Grok Bot installs it from a prompt.
+Open the section for your agent. The chat apps take one file, [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). The coding agents take this folder. Grok Bot and ChatGPT Work install it when you ask.
 
 Use that download link, not GitHub's **Code > Download ZIP**. The skill's folder must be named `riskthing`, and GitHub's own zip names it `riskthing-skill-main`.
 
@@ -34,7 +34,7 @@ If Claude shows no place to upload a skill, turn on **Code execution and file cr
 </details>
 
 <details>
-<summary><b>ChatGPT</b></summary>
+<summary><b>ChatGPT</b> (upload the zip)</summary>
 
 1. Download [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). Leave it zipped.
 2. Open ChatGPT in a browser at [chatgpt.com](https://chatgpt.com). In the sidebar, select **Plugins**, then the **Skills** tab.
@@ -42,7 +42,26 @@ If Claude shows no place to upload a skill, turn on **Code execution and file cr
 4. Check that **riskthing** appears under **Installed**. ChatGPT checks an uploaded skill before it becomes available.
 5. Start a new chat, attach a plan or a proposal, type `@` and choose **riskthing**. Then ask: "List the risks in this document, each with a likelihood, a consequence and a mitigation."
 
-If the desktop app shows no upload option, do step 3 in the browser. The skill is then available in the app.
+The skill works in both Chat and Work. Use Chat to draft or score a few risks. Use Work to review a set of documents or to build a whole register.
+
+- **No Skills tab.** OpenAI offers personal skills on Business, Enterprise, Healthcare and Edu plans, and a workspace administrator can turn them off. See OpenAI's [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt).
+- **No upload option in the desktop app.** Do step 3 in the browser. The skill is then available in the app.
+- **You asked Chat to install the skill from GitHub.** Chat can read the repository, but it cannot add a skill to your account. Upload the zip, or use ChatGPT Work.
+
+</details>
+
+<details>
+<summary><b>ChatGPT Work</b> (install by asking)</summary>
+
+1. In ChatGPT, switch from **Chat** to **Work**.
+2. Select the GitHub plugin, then send:
+
+   ```text
+   Install the riskthing skill from https://github.com/riskthing/riskthing-skill. Keep SKILL.md as written, and keep references/ and references/prompts/ beside it.
+   ```
+
+3. When Work confirms the install, open the skill link it returns, or find **riskthing** under **Plugins > Skills > Installed**. If the list has not refreshed, reopen the Skills page.
+4. Start a new chat, attach a plan or a proposal, type `@` and choose **riskthing**. Then ask: "List the risks in this document, each with a likelihood, a consequence and a mitigation."
 
 </details>
 
@@ -114,7 +133,7 @@ In a session in that project, ask: "Use the riskthing skill to review this docum
 </details>
 
 <details>
-<summary><b>Codex</b></summary>
+<summary><b>Codex</b> (the coding agent)</summary>
 
 **Every project on this computer:**
 

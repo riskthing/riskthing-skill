@@ -1,12 +1,13 @@
 ---
 name: riskthing
 description: Works a RiskThing risk register through the RiskThing MCP server — captures risks and mitigations as they surface during normal work, onboards a blank organization or new project by interview or document import, and runs check-ins that review, revise and add to an existing register. Also drafts and scores risk statements and mitigations in RiskThing, NASA RMH or DoD RIO style, with or without the server. Use when a risk, hunch, blocker, dependency slip, schedule threat or "what could go wrong" comes up while working; when the user asks to set up RiskThing, add or update risks or mitigations, score likelihood and consequence, write or refine a risk statement or mitigation, or do a risk check-in or review; or when a RiskThing tool returns version_conflict, a grouped-tool selector error, or partial bulk_create_risks results.
-compatibility: Register work needs the RiskThing MCP server (tools such as find_risks, create_risk, diff_snapshots). The writing and scoring references work without it.
 ---
 
 # RiskThing
 
 RiskThing keeps a risk register: projects hold risks, and mitigations are linked to the risks they reduce. This skill covers what to do with it. The server's own `instructions` state the calling rules; the table below repeats them because not every client shows them.
+
+Register work needs the RiskThing MCP server (tools such as `find_risks`, `create_risk`, `diff_snapshots`). The writing and scoring references work without it.
 
 ## Calling rules
 
