@@ -68,7 +68,7 @@ git clone https://github.com/riskthing/riskthing-skill ~/.claude/skills/riskthin
 
 To update, run `git pull` in that folder.
 
-**One project only.** Run this in the project's top folder:
+**One project only.** Run this in the top folder of the project's git repository:
 
 ```bash
 curl -L -o riskthing.zip https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip
@@ -100,7 +100,7 @@ git clone https://github.com/riskthing/riskthing-skill ~/.agents/skills/riskthin
 
 To update, run `git pull` in that folder.
 
-**One project only.** Run this in the project's top folder:
+**One project only.** Run this in the top folder of the project's git repository:
 
 ```bash
 curl -L -o riskthing.zip https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip
@@ -132,7 +132,9 @@ git clone https://github.com/riskthing/riskthing-skill ~/.grok/skills/riskthing
 
 To update, run `git pull` in that folder.
 
-**One project only.** Run this in the project's top folder:
+Grok Build also reads `~/.claude/skills/`. If the skill is installed there for Claude Code, Grok Build already has it. Keep that copy current with `git pull`.
+
+**One project only.** Run this in the top folder of the project's git repository:
 
 ```bash
 curl -L -o riskthing.zip https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip
@@ -149,7 +151,7 @@ These paths must then exist, with no second `riskthing/` folder inside the first
 
 Keep `references/` beside `SKILL.md`. `SKILL.md` alone leaves out the writing guidance and the scales.
 
-In a session in that project, ask: "Use the riskthing skill to review this document." If the skill does not appear, restart Grok Build.
+In a session in that project, ask: "Use the riskthing skill to review this document." If the skill does not appear, run `grok inspect` to see which skills Grok Build found. Grok Build loads a project skill only after you trust the folder.
 
 </details>
 
@@ -182,6 +184,13 @@ For Claude Code:
 
 ```bash
 claude mcp add --transport http riskthing https://app.riskthing.com/mcp \
+  --header "Authorization: Bearer <your token>"
+```
+
+For Grok Build:
+
+```bash
+grok mcp add --transport http riskthing https://app.riskthing.com/mcp \
   --header "Authorization: Bearer <your token>"
 ```
 
