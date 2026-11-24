@@ -16,7 +16,7 @@ An agent skill for risk management. It teaches an AI agent to write risks and mi
 
 You need no RiskThing account and no MCP connection to install the skill, analyze a document, draft risks, or score likelihood and consequence.
 
-Open the section for your agent. The chat apps take one file, [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). The coding agents take this folder.
+Open the section for your agent. The chat apps take one file, [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). The coding agents take this folder. Grok Bot installs it from a prompt.
 
 Use that download link, not GitHub's **Code > Download ZIP**. The skill's folder must be named `riskthing`, and GitHub's own zip names it `riskthing-skill-main`.
 
@@ -47,13 +47,37 @@ If the desktop app shows no upload option, do step 3 in the browser. The skill i
 </details>
 
 <details>
-<summary><b>Grok</b></summary>
+<summary><b>Grok</b> (the chat at grok.com)</summary>
 
 1. Download [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). Leave it zipped.
 2. Open **Skills** at [grok.com/skills](https://grok.com/skills).
 3. Choose the option to upload or import a skill, and select `riskthing.zip`.
 4. Check that **riskthing** is in your skills list.
 5. Start a new chat, attach a plan or a proposal, and ask: "Use the riskthing skill to list the risks in this document, each with a likelihood, a consequence and a mitigation."
+
+These steps do not install the skill for Grok Bot or Grok Build. Each has its own section below.
+
+</details>
+
+<details>
+<summary><b>Grok Bot</b> (the cloud assistant)</summary>
+
+Grok Bot has no upload for a skill. Your Bot installs it when you ask.
+
+1. In a chat with your Bot, send:
+
+   ```text
+   Install the riskthing skill from https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip
+
+   Save SKILL.md as a skill named riskthing. Keep its frontmatter and its body as written.
+   Copy every file under references/ into the skill's folder. Keep the references/ and references/prompts/ layout.
+   Then list the files you installed.
+   ```
+
+2. Read the Bot's list. It must name `SKILL.md` and the files under `references/`, such as `references/scales.md` and `references/writing.md`. A skill saved without them has no writing guidance and no scales.
+3. Attach a plan or a proposal and ask: "Use the riskthing skill to list the risks in this document, each with a likelihood, a consequence and a mitigation."
+
+The skill goes into the library that all your Bots share. If another of your Bots cannot find it, open **Connect apps** in the sidebar, select the connected count next to the title, and switch on **riskthing** under **Private skills**.
 
 </details>
 
@@ -122,7 +146,7 @@ In a session in that project, ask: "Use the riskthing skill to review this docum
 </details>
 
 <details>
-<summary><b>Grok Build</b></summary>
+<summary><b>Grok Build</b> (the terminal coding agent)</summary>
 
 **Every project on this computer:**
 
@@ -193,6 +217,14 @@ For Grok Build:
 grok mcp add --transport http riskthing https://app.riskthing.com/mcp \
   --header "Authorization: Bearer <your token>"
 ```
+
+For Grok Bot, ask your Bot in chat:
+
+```text
+Add a custom connector for the MCP server at https://app.riskthing.com/mcp. Send my API token as the header Authorization: Bearer <token>.
+```
+
+The Bot asks for your token and checks with you before it adds the connector. The connector then works for all your Bots.
 
 For a client that reads a JSON configuration:
 
