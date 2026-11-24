@@ -14,13 +14,85 @@ An agent skill for risk management. It teaches an AI agent to write risks and mi
 
 ## Install
 
-Copy this folder, with its `SKILL.md` at the top level, to where your agent loads skills. For Claude Code, that is `~/.claude/skills/riskthing/` for every project, or `.claude/skills/riskthing/` inside one project:
+Open the section for your agent. The chat apps take one file, [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). The coding agents take this folder.
+
+Use that download link, not GitHub's **Code > Download ZIP**. The skill's folder must be named `riskthing`, and GitHub's own zip names it `riskthing-skill-main`.
+
+<details>
+<summary><b>Claude</b> (web and desktop apps)</summary>
+
+1. Download [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). Leave it zipped.
+2. In Claude, open **Customize > Skills** ([claude.ai/customize/skills](https://claude.ai/customize/skills)).
+3. Select **+**, then **Create skill**, then **Upload a skill**. Choose `riskthing.zip`.
+4. Check that **riskthing** is in your skills list and is switched on.
+5. Start a new chat, attach a plan or a proposal, and ask: "Use the riskthing skill to list the risks in this document, each with a likelihood, a consequence and a mitigation."
+
+If Claude shows no place to upload a skill, turn on **Code execution and file creation** in your Claude settings. On a Team or Enterprise plan, an owner may have to allow skills first.
+
+</details>
+
+<details>
+<summary><b>ChatGPT</b></summary>
+
+1. Download [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). Leave it zipped.
+2. Open ChatGPT in a browser at [chatgpt.com](https://chatgpt.com). In the sidebar, select **Plugins**, then the **Skills** tab.
+3. Select **Create**, then **Upload from your computer**. Choose `riskthing.zip`.
+4. Check that **riskthing** appears under **Installed**. ChatGPT checks an uploaded skill before it becomes available.
+5. Start a new chat, attach a plan or a proposal, type `@` and choose **riskthing**. Then ask: "List the risks in this document, each with a likelihood, a consequence and a mitigation."
+
+If the desktop app shows no upload option, do step 3 in the browser. The skill is then available in the app.
+
+</details>
+
+<details>
+<summary><b>Grok</b></summary>
+
+1. Download [`riskthing.zip`](https://github.com/riskthing/riskthing-skill/releases/latest/download/riskthing.zip). Leave it zipped.
+2. Open **Skills** at [grok.com/skills](https://grok.com/skills).
+3. Choose the option to upload or import a skill, and select `riskthing.zip`.
+4. Check that **riskthing** is in your skills list.
+5. Start a new chat, attach a plan or a proposal, and ask: "Use the riskthing skill to list the risks in this document, each with a likelihood, a consequence and a mitigation."
+
+</details>
+
+<details>
+<summary><b>Claude Code</b></summary>
+
+One command installs the skill for every project:
 
 ```bash
 git clone https://github.com/riskthing/riskthing-skill ~/.claude/skills/riskthing
 ```
 
-Other agents that support `SKILL.md` skills load it from their own skills folder.
+For one project only, clone it to `.claude/skills/riskthing/` inside that project. To update, run `git pull` in the folder.
+
+</details>
+
+<details>
+<summary><b>Codex and Grok Build</b></summary>
+
+Codex loads skills from `~/.agents/skills/`:
+
+```bash
+git clone https://github.com/riskthing/riskthing-skill ~/.agents/skills/riskthing
+```
+
+Grok Build loads skills from `~/.grok/skills/`:
+
+```bash
+git clone https://github.com/riskthing/riskthing-skill ~/.grok/skills/riskthing
+```
+
+</details>
+
+<details>
+<summary><b>Any other agent</b></summary>
+
+Copy this folder to where your agent loads `SKILL.md` skills. Name the folder `riskthing`, and keep `SKILL.md` at its top level.
+
+</details>
+
+None of these steps needs a RiskThing account. Without one, the skill writes and scores risks and gives them to you as a table. To keep them in a live register, connect RiskThing.
 
 ## Connect RiskThing
 
