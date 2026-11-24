@@ -58,17 +58,17 @@ Stay brief. Capture is a side task, so do not break the user's flow with a regis
 
 Unless the user requests another order or grouping:
 
-- Calculate severity for every scored risk as likelihood × consequence.
-- Show Likelihood, Consequence and Severity in every risk table.
-- Sort risks by descending severity.
-- Break severity ties by higher consequence, then higher likelihood. Preserve the original order for remaining ties.
+- Calculate the risk score for every scored risk as likelihood × consequence.
+- Show Likelihood, Consequence and Risk Score in every risk table.
+- Sort risks by descending risk score.
+- Break risk score ties by higher consequence, then higher likelihood. Preserve the original order for remaining ties.
 - Apply this default independently to every risk list or table in the response, including summaries and shortlists.
-- If grouping is requested without an ordering rule, sort risks within each group by descending severity.
+- If grouping is requested without an ordering rule, sort risks within each group by descending risk score.
 - Put unscored risks after scored risks and label them Unscored. Do not invent ratings solely to sort them.
 
 Use the same ratings wherever a risk appears in the response. These rules apply both with and without a RiskThing MCP connection.
 
-If recommended action priorities differ from severity order, state that explicitly and explain why, such as an urgent deadline, a dependency, or one action reducing several risks.
+If recommended action priorities differ from risk score order, state that explicitly and explain why, such as an urgent deadline, a dependency, or one action reducing several risks.
 
 ## Writing
 
